@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-gradient-to-br from-green-50 to-blue-50 text-gray-900;
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  .eco-gradient {
+    @apply bg-gradient-to-r from-green-400 via-eco-500 to-blue-500;
+  }
+  
+  .eco-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 p-6;
+  }
+  
+  .eco-button {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .eco-button-primary {
+    @apply eco-button bg-gradient-to-r from-green-500 to-eco-600 text-white hover:from-green-600 hover:to-eco-700 shadow-lg hover:shadow-xl;
+  }
+  
+  .eco-button-secondary {
+    @apply eco-button bg-white/80 text-gray-700 border border-gray-200 hover:bg-white hover:shadow-md;
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .pulse-eco {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+.leaflet-container {
+  @apply rounded-lg;
+}
